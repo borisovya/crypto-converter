@@ -1,0 +1,14 @@
+.header {
+    position: relative;
+    padding: 0 30px;
+    height: 80px;
+    background-color: dodgerblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    z-index: 9999;
+    right: 0;
+    left: 0;
+}
