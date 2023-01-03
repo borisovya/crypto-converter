@@ -1,0 +1,41 @@
+.App {
+
+}
+
+.tableBoxContainer img{
+  width: 20px;
+  height: 20px;
+}
+
+.mainBoxContainer {
+
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 25%;
+}
+
+.cryptoInputBox {
+  display: flex;
+  flex-direction: row;
+  padding-left: 20px;
+}
+
+.selectStyle{
+  width: 150px;
+}
+
+.currencyLine {
+  margin-top: 5px;
+}
+
+.tableBoxContainer .tableMain {
+  width: 80%;
+}
+
+
+
