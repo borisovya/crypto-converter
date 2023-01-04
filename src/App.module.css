@@ -3,12 +3,12 @@
 }
 
 .tableBoxContainer img{
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
 }
 
-.mainBoxContainer {
-
+.tableBoxContainer {
+  margin-top: 70px;
 }
 
 .container {
@@ -17,6 +17,11 @@
   justify-content: space-around;
   align-items: center;
   min-height: 25%;
+  margin-top: 50px;
+}
+
+.container h5 {
+  margin-top: 15px;
 }
 
 .cryptoInputBox {
@@ -30,7 +35,7 @@
 }
 
 .currencyLine {
-  margin-top: 5px;
+  margin-top: 15px;
 }
 
 .tableBoxContainer .tableMain {

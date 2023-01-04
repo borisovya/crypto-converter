@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import Table from "@mui/material/Table";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
@@ -8,17 +8,9 @@ import s from "../../App.module.css";
 import Paper from '@mui/material/Paper';
 import TableContainer from '@mui/material/TableContainer';
 import {getCurrency} from "../../Store/currency-reducer";
-import {AppDispatch, useAppDispatch, useAppSelector} from "../../Store/Store";
+import {useAppDispatch, useAppSelector} from "../../Store/Store";
 
 
-
-export type TCoin = {
-    name: string;
-    fullName: string;
-    imageUrl: string;
-    price: number;
-    volume24Hour: number;
-}
 
 export const CryptoTable = () => {
 
@@ -28,7 +20,7 @@ export const CryptoTable = () => {
             useEffect(() => {
                 dispatch(getCurrency())
             }, [])
-    console.log('items' + items)
+
             return (
                 <TableContainer component={Paper} className={s.tableBoxContainer}>
                     <Table sx={{minWidth: 650}} aria-label="simple table">

@@ -2,7 +2,8 @@ import {AppDispatch} from "./Store";
 import {currencyAPI} from "../API/API";
 
 const currencyInitialState = {
-   data: []
+    data: [],
+    mainCurrency: 'USD'
 }
 
 export const currencyReducer = (
@@ -11,7 +12,7 @@ export const currencyReducer = (
 ): CurrencyStateType => {
     switch (action.type) {
         case 'SET-CURRENCIES':
-            return { ...state, data: action.data }
+            return {...state, data: action.data}
         default:
             return state
     }
@@ -25,13 +26,9 @@ export const setCurrencyAC = (data: CurrencyItemType[]) => {
 }
 
 export const getCurrency = () => async (dispatch: AppDispatch) => {
-
     try {
         const response = await currencyAPI.getCurrencies()
-        console.log(response.data.Data)
         dispatch(setCurrencyAC(response.data.Data))
-
-
     } catch (err) {
         alert(err)
     }
@@ -43,15 +40,6 @@ type CurrencyStateType = {
 }
 
 export type CurrencyActionsType = ReturnType<typeof setCurrencyAC>
-
-export type TCoin = {
-    name: string;
-    fullName: string;
-    imageUrl: string;
-    price: number;
-    volume24Hour: number;
-}
-
 
 export type CurrencyItemType = {
     "CoinInfo": {
