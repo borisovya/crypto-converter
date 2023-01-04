@@ -69,7 +69,7 @@ export const Converter = () => {
                         onChange={onHandleCurrencyChange}
                     />
                     <FormControl>
-                        <InputLabel id="label1">Currency from</InputLabel>
+                        <InputLabel className={s.label} id="label1">From</InputLabel>
                         <Select
                             labelId="label1"
                             id="demo-simple-select-standard"
@@ -79,11 +79,10 @@ export const Converter = () => {
                             className={s.selectStyle}
                         >
                             {currencyNamesArray.map(coin => <MenuItem key={coin} value={coin}> {coin} </MenuItem>)}
-
                         </Select>
                     </FormControl>
                     <FormControl>
-                        <InputLabel id="label2">Currency to</InputLabel>
+                        <InputLabel className={s.label} id="label2">To</InputLabel>
                         <Select
                             labelId="label2"
                             id="demo-simple-select-standard"
