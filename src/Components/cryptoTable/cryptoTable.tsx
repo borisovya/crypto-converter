@@ -10,8 +10,6 @@ import TableContainer from '@mui/material/TableContainer';
 import {getCurrency} from "../../Store/currency-reducer";
 import {useAppDispatch, useAppSelector} from "../../Store/Store";
 
-
-
 export const CryptoTable = () => {
 
             const dispatch = useAppDispatch()

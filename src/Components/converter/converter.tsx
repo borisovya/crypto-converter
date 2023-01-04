@@ -36,12 +36,11 @@ export const Converter = () => {
         }
     }};
     const handleSelectChange2 = (event: SelectChangeEvent) => {
-        setSelectValue2(event.target.value);
+        setSelectValue2(event.target.value && event.target.value);
         if (event.target.value) {
             const curTo = currenciesArray.find(cur => cur.CoinInfo.Name === event.target.value)
             curTo && setCurTo(curTo.RAW.USD.PRICE)
             if (inputValue1 && curFrom && curTo) {
-                console.log(inputValue1, curFrom, curTo)
                 const convertedCost = (((+inputValue1 * curFrom) / curTo.RAW.USD.PRICE).toFixed(3))
                 convertedCost && setInputValue2(convertedCost)
             }
@@ -70,7 +69,7 @@ export const Converter = () => {
                         onChange={onHandleCurrencyChange}
                     />
                     <FormControl>
-                        <InputLabel id="label1">Currency</InputLabel>
+                        <InputLabel id="label1">Currency from</InputLabel>
                         <Select
                             labelId="label1"
                             id="demo-simple-select-standard"
@@ -83,17 +82,8 @@ export const Converter = () => {
 
                         </Select>
                     </FormControl>
-                </div>
-                <div className={s.currencyLine}>
-                    <TextField
-                        id="outlined-basic"
-                        label="Amount"
-                        variant="outlined"
-                        value={inputValue2}
-                        disabled={true}
-                    />
                     <FormControl>
-                        <InputLabel id="label2">Currency</InputLabel>
+                        <InputLabel id="label2">Currency to</InputLabel>
                         <Select
                             labelId="label2"
                             id="demo-simple-select-standard"
@@ -107,7 +97,7 @@ export const Converter = () => {
                     </FormControl>
                 </div>
                 <Typography variant="h5" gutterBottom className={s.blockMargin}>
-                    {/*{selectValue1 && selectValue2 && inputValue1 && inputValue2 && `${inputValue1} ${selectValue1} = ${inputValue2} ${selectValue2}`}*/}
+                    {selectValue1 && selectValue2 && inputValue1 && inputValue2 && `${inputValue1} ${selectValue1} = ${inputValue2} ${selectValue2}`}
                 </Typography>
             </div>
         </Grid>

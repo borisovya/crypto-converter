@@ -25,6 +25,7 @@ export const setCurrencyAC = (data: CurrencyItemType[]) => {
     } as const
 }
 
+//thunk
 export const getCurrency = () => async (dispatch: AppDispatch) => {
     try {
         const response = await currencyAPI.getCurrencies()
